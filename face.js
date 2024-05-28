@@ -4,7 +4,7 @@
  */  
 
 // remove this or set to false to enable full program (load will be slower)
-var DEBUG_MODE = true;
+var DEBUG_MODE = false;
 
 // this can be used to set the number of sliders to show
 var NUM_SLIDERS = 10;
@@ -257,8 +257,9 @@ function Face() {
 
     pop();
 
-
-
+    trainFace = false;
+    if(trainFace){
+   
      //OLD STUFF
       // console.log()
         // head
@@ -326,6 +327,7 @@ function Face() {
        //ellipse(0,0, 0.5,0.5) center point
        //rect(-2,-2,4.5,4) sizing debug 
 
+      }
 
  
     }
