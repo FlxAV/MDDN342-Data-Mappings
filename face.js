@@ -336,6 +336,7 @@ function Face() {
   // Draw kodama body
   this.drawKodamaBody = function() {
     angleMode(DEGREES); // enable the Degree mode not to make calculations easier.
+    stroke(0);
     strokeWeight(0.7);
     push();
     translate(0, 10);
