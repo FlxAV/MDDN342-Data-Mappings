@@ -1,29 +1,76 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/HpplOQZx)
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=14993368&assignment_repo_type=AssignmentRepo)
-## 2024 MDDN342 Assignment 3: Data Mappings
+# 2024 MDDN342 Assignment 3: Data Mappings
+
+## Project Overview
+
+In this assignment, I extended the face generating code from Assignment 2 to incorporate a dataset of faces. The goal was to introduce more variability and attributes to the Kodama-like faces generated previously.
+
+## Attributes and Features
+
+### Face Shape
+
+The base shape of each face is determined by gender and age characteristics:
+- **Female:** Round face shape
+- **Male:** Vertical oval face shape
+- **Elderly:** Horizontal oval face shape
+
+### Eye Position and Size
+
+Eye position and size variation are based on the direction the individual is facing:
+- Eyes adjust vertically based on the direction (left, right, forward)
+- Size differences reflect depth perception, with further eyes appearing smaller
+
+### Mouth Expression
+
+Mouth expressions range from smiling to frowning, influenced by the individual's facial expression in the dataset.
+
+### Leaf Addition
+
+A leaf can grow out of the Kodama's head, influenced by the presence of long hair in the dataset:
+- Long hair correlates with the appearance of a leaf
+
+### Leaf Position
+
+Leaf position varies across four points, based on the individual's facing direction and hair characteristics.
+
+### Color Variation
+
+Facial color warmth ranges from warm white to cold blue, correlating with skin tone in the dataset.
+
+## Reflection
+
+While implementing these attributes aimed to enhance facial diversity, the inherent randomness of face shape (wobbliness) may overshadow attribute variations. Balancing these factors remains crucial to maintaining recognizable differences across generated faces.
+
+## Running the Project
+
+To view and interact with the project, follow these steps:
+
+1. **Setup:**
+   - Clone the repository to your local machine.
+   - Open the project folder in Visual Studio Code.
+
+2. **Run the Project:**
+   - Navigate to the index.html file.
+   - Right-click on the index.html file and select "Open with Live Server" (if you have the Live Server extension installed) or open it directly in your browser.
+   - The project should open in a new browser tab, displaying examples of different people and groups. Use the arrow keys to navigate between groups.
+
+3. **Interact:**
+   - Hover your mouse over the left-hand side of the image to reveal a popup with multiple buttons.
+   - In the dropdown menu of the draw function, click "Train" to access the face modification tool. Here, you can adjust parameters of the generated Kodama face to match the characteristics of a displayed image of a person. Save these values by clicking the appropriate buttons.
+   - Use the arrows in the draw function dropdown to cycle through different images and repeat the modification process as desired.
+   - Once sufficient values are saved, click "Get All Values" to copy them into the file "training_values.JSON".
+
+4. **Testing and Validation:**
+   - Within the draw function dropdown, options like "Training Quiz", "Interpolation Quiz", and "Nearest Neighbor" allow you to validate and test the algorithm's performance.
+   - These options enable you to select the most suitable generated Kodama face for a given image and compare it against the algorithm's selection. Use numerical keys (1 to 4) to select images.
+
+5. **Developer Note:**
+   - To use the face design tool effectively, ensure that specific lines in `face_code.js` (Line 122 and 128) are commented out or added as needed to avoid performance issues.
 
 
+## Additional Notes
 
-For this assignemnt we were tasked with adapting our assignment 2 face generating code to work with a dataset of faces.
+- **Development Environment:** Visual Studio Code with Live Server recommended for real-time updates.
 
-My kodama faces are very bland and not many attributes to them since the main variety of the face is the fact that each face shape is randomised. 
+---
 
-Since I am not able to use the face wobbliness as a feasable attribute I added a couple features to add some variety.
-
-Attributes:
-
-Face shape: The Face wobbliness is out of my control but the base shape is either round, horizontal oval or vertical oval. So I made it so that if the person was a female they would get a round face while if the were male they would get a vertical oval shape, and if the person was elderly they would get a horizontal oval. Reasoning is on average, male have square face and longer faces due to their jaws. Female tend to have rounder faces, and when you get old your face and body compresses itself therefore the horizontal circle shape.
-
-Eye Position: The position of each eye can be in any of 10 different spots around the face. The way I assigned the position was based off of where the person was facing. If the person was facing to your right, the eye on the right side would be further up and the eye on the left side would be lower down. Vice versa if the person is facing the left. If the person is facing forward the eyes were level.
-
-Eye Size: For the size it is also based off of the direction the person is facing. if the person is facing right, the right eye will be further back and therefore smaller. Therefore based on which eye would be further back the eye is smaller  relatively to the other eye. However is one person has smaller eyes both eyes will be smaller and then one of the eyes evne smaller if its further away.
-
-Mouth: The mouth can vary from smiling a lot to being very sad and in between having a straight line mouth. That attribute was as expected, depending on how happy or sad the mouth expression was of the person i would copy the level onto the mouth of the kodama.
-
-Leaf: The leaf is one of the attributes I added from assignent 2. Kodama are spirits of the forest so even though they dont have leaves on their heads in the movie I beleive it is fitting for them to sometimes have a leaf grow out of their head. Now I made it so that if the person had long hair (on average, a female) the leaf would appear on the head of the kodama.
-
-Leaf Position: This one is also based on the way the person is facing. If the person has long hair then they have a leaf, and the leaf position can be between 4 points. Depending on which way the person is facing and how much the leaf will be placed accordingly.
-
-Color: A very weak attribute in my opinion. I basically have the default color being white, however the color can change in "warmth" as in going from a warm white to a blue white (which is basically just blue). That one I ascociated to the color of the person. The darker the skin color the more towards the blue/colder color.
-
-With those Im hoping that it is enough so that there is recognisable difference between different people and expressions and that they remain consistent (ie, if two female then hopefully both get round faces, etc...). My issue is the randomness of the face shape (the wobbliness) may be too overpowering and take away the focus from the variety in the attributes. 
+This README provides an overview of the "Data Mappings" project, detailing its extended functionalities from Assignment 2 to incorporate a dataset of faces. It explores various attributes introduced to enhance diversity among generated Kodama-like faces, reflecting the project's creative evolution and technical implementation.
